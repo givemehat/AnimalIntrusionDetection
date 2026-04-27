@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* OpenLayers Map Styles */
+.ol-control {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 4px;
+}
+
+.ol-zoom {
+  top: 1rem;
+  left: 1rem;
+}
+
+.ol-zoom button {
+  background-color: white;
+  color: #374151;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.ol-zoom button:hover {
+  background-color: #f3f4f6;
+}
+
+.ol-zoom button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Ensure the map container takes full height */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* Add a subtle border to the map container */
+.map-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
