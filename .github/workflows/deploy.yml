@@ -15,20 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Find root directory
-        id: root_dir
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install and Build
         run: |
-          # Find directory containing index.html
-          INDEX_PATH=$(find . -name "index.html" -not -path "*/node_modules/*" | head -n 1)
-          if [ -n "$INDEX_PATH" ]; then
-            DIR_PATH=$(dirname "$INDEX_PATH")
-            echo "dir=$DIR_PATH" >> $GITHUB_OUTPUT
-          else
-            echo "dir=." >> $GITHUB_OUTPUT
-          fi
+          cd Agricultural-Weather-Forecasting-and-Climate-Insights-main
+          npm ci
+          npm run build
           
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ steps.root_dir.outputs.dir }}
+          publish_dir: ./Agricultural-Weather-Forecasting-and-Climate-Insights-main/dist
