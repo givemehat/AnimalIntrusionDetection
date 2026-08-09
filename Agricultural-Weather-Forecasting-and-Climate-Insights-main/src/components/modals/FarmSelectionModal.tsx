@@ -1,8 +1,8 @@
-import React from 'react';
-import { X } from 'lucide-react';
-import { Farm } from '../../types';
-import { useFarms } from '../../hooks/useFarms';
-import { Coordinates } from '../../utils/locationUtils';
+import React from "react";
+import { X } from "lucide-react";
+import { Farm } from "../../types";
+import { useFarms } from "../../hooks/useFarms";
+import { Coordinates } from "../../utils/locationUtils";
 
 interface FarmSelectionModalProps {
   isOpen: boolean;
@@ -11,11 +11,11 @@ interface FarmSelectionModalProps {
   coordinates: Coordinates;
 }
 
-export default function FarmSelectionModal({ 
-  isOpen, 
-  onClose, 
+export default function FarmSelectionModal({
+  isOpen,
+  onClose,
   onSelectFarm,
-  coordinates 
+  coordinates,
 }: FarmSelectionModalProps) {
   const { farms, isLoading, error } = useFarms(coordinates);
 
@@ -43,7 +43,9 @@ export default function FarmSelectionModal({
 
         {error && (
           <div className="text-center py-8">
-            <p className="text-red-500">Error loading farms. Please try again.</p>
+            <p className="text-red-500">
+              Error loading farms. Please try again.
+            </p>
           </div>
         )}
 
@@ -61,11 +63,9 @@ export default function FarmSelectionModal({
               className="w-full text-left p-4 hover:bg-gray-50 rounded-lg border border-gray-200 transition-colors"
             >
               <h3 className="font-medium">{farm.name}</h3>
+              <p className="text-sm text-gray-600">Size: {farm.size} acres</p>
               <p className="text-sm text-gray-600">
-                Size: {farm.size} acres
-              </p>
-              <p className="text-sm text-gray-600">
-                Crops: {farm.crops.map(crop => crop.name).join(', ')}
+                Crops: {farm.crops.map((crop) => crop.name).join(", ")}
               </p>
             </button>
           ))}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Sprout, Calendar, Droplets } from 'lucide-react';
+import React from "react";
+import { Sprout, Calendar, Droplets } from "lucide-react";
 
 export default function CropRecommendations() {
   return (
@@ -24,7 +24,8 @@ export default function CropRecommendations() {
             <div>
               <p className="font-medium text-blue-900">Irrigation Needed</p>
               <p className="text-sm text-blue-800 mt-1">
-                Schedule irrigation for tomorrow morning due to low rainfall forecast
+                Schedule irrigation for tomorrow morning due to low rainfall
+                forecast
               </p>
             </div>
           </div>

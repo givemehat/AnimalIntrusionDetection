@@ -15,7 +15,7 @@ export interface Crop {
   type: string;
   plantingDate: Date;
   harvestDate: Date;
-  irrigationType: 'sprinkler' | 'drip' | 'rainfed';
+  irrigationType: "sprinkler" | "drip" | "rainfed";
 }
 
 export interface WeatherData {
@@ -42,8 +42,8 @@ export interface DayForecast {
 
 export interface WeatherAlert {
   id: string;
-  type: 'frost' | 'storm' | 'drought' | 'extreme';
-  severity: 'low' | 'medium' | 'high';
+  type: "frost" | "storm" | "drought" | "extreme";
+  severity: "low" | "medium" | "high";
   message: string;
   startTime: Date;
   endTime: Date;

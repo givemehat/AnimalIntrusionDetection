@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Farm } from '../types';
-import { getFarmsNearLocation } from '../utils/farmUtils';
-import { Coordinates } from '../utils/locationUtils';
+import { useState, useEffect } from "react";
+import { Farm } from "../types";
+import { getFarmsNearLocation } from "../utils/farmUtils";
+import { Coordinates } from "../utils/locationUtils";
 
 export function useFarms(coordinates: Coordinates) {
   const [farms, setFarms] = useState<Farm[]>([]);
@@ -16,7 +16,9 @@ export function useFarms(coordinates: Coordinates) {
         setFarms(nearbyFarms);
         setError(null);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error('Failed to load farms'));
+        setError(
+          err instanceof Error ? err : new Error("Failed to load farms"),
+        );
       } finally {
         setIsLoading(false);
       }

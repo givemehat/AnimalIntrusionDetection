@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { MapPin } from 'lucide-react';
-import WeatherMap from './WeatherMap';
-import CurrentConditions from './CurrentConditions';
-import ForecastSection from './ForecastSection';
-import AlertsPanel from './AlertsPanel';
-import CropRecommendations from './CropRecommendations';
-import FarmSelectionModal from './modals/FarmSelectionModal';
-import { useFarmContext } from '../context/FarmContext';
-import { getUserLocation } from '../utils/locationUtils';
+import React, { useState } from "react";
+import { MapPin } from "lucide-react";
+import WeatherMap from "./WeatherMap";
+import CurrentConditions from "./CurrentConditions";
+import ForecastSection from "./ForecastSection";
+import AlertsPanel from "./AlertsPanel";
+import CropRecommendations from "./CropRecommendations";
+import FarmSelectionModal from "./modals/FarmSelectionModal";
+import { useFarmContext } from "../context/FarmContext";
+import { getUserLocation } from "../utils/locationUtils";
 
 export default function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +29,10 @@ export default function Dashboard() {
     <div className="min-h-screen bg-[#021510] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#032e22] via-[#021510] to-black text-white relative overflow-hidden">
       {/* Animated Background Orbs */}
       <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-green-500/20 rounded-full blur-[120px] animate-pulse pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }}></div>
+      <div
+        className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-blue-500/20 rounded-full blur-[120px] animate-pulse pointer-events-none"
+        style={{ animationDelay: "2s" }}
+      ></div>
       <header className="bg-white/5 backdrop-blur-md border-b border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
@@ -42,11 +45,11 @@ export default function Dashboard() {
               </h1>
             </div>
             <div className="flex items-center space-x-4">
-              <button 
+              <button
                 onClick={handleAddFarm}
                 className="px-5 py-2.5 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-lg hover:bg-emerald-500/30 hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)]"
               >
-                {selectedFarm ? 'Change Farm' : 'Add Farm'}
+                {selectedFarm ? "Change Farm" : "Add Farm"}
               </button>
             </div>
           </div>

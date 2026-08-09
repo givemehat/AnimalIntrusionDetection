@@ -1,5 +1,5 @@
-import React from 'react';
-import { Thermometer, Droplets, Wind, Compass } from 'lucide-react';
+import React from "react";
+import { Thermometer, Droplets, Wind, Compass } from "lucide-react";
 
 export default function CurrentConditions() {
   return (
